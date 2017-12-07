@@ -1,4 +1,5 @@
-class _EventHook(object):
+import asyncio
+class EventHook(object):
 
     def __init__(self):
         self.__handlers = []

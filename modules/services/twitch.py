@@ -1,11 +1,7 @@
 import asyncio
 from  ..utils.EventHook import EventHook
-from .BaseContext import BaseContext
+from ..utils.MainObjects import Context, User
 
-
-class Context(BaseContext):
-    def postInit(*args, **kwargs): #Add specifics not defined in BaseContext
-        pass
 
 
 class Twitch:

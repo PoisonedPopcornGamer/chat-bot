@@ -5,6 +5,10 @@ class MainObject(object):
         for i in attributes:
             self.__dict__[i] = attributes[i]
 
+    def __iter__(self):
+        for i in self.__dict__:
+            yield (i, self.__dict__[i])
+
 
 
 class Context(MainObject):

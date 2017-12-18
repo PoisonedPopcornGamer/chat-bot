@@ -1,5 +1,7 @@
 import asyncio
-from modules.services import twitch #will run in if statements later.
+import importlib
+
+#from modules.services import twitch #will run in if statements later.
 from  modules.utils.EventHook import EventHook # for commands later
 
 
@@ -16,7 +18,9 @@ class Bot:
         self.bot.__dict__[name] = module
 
     def add(self):
-        twitch.setup(self.bot)
+        lib = importlib.import_module('modules.services.twitch')
+        lib.setup(self.bot)
+        #twitch.setup(self.bot)
 
         self.bot.twitch.onMsg += self.aprint
 

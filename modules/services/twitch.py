@@ -28,6 +28,7 @@ class Twitch:
         if channel:
             self.writer.write(b'JOIN #' + channel.encode('utf-8')+ b'\r\n')
         self.onConnect()
+        print('[Twitch] Done connecting.') #later: logger.
         return True
 
     async def _listen(self):
@@ -102,6 +103,6 @@ class Twitch:
 def setup(bot):
     
     n = Twitch()
-    asyncio.get_event_loop().create_task(n.connect('sweetiebot_', 'oauth:msivmpb3q3a5fv5qlof1cl05jhn3eh', 'x_thehiddengamer_x'))
+    asyncio.get_event_loop().create_task(n.connect('USER', 'oauth:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 'CHANNEL'))
 
     bot.register(n, name='twitch')
